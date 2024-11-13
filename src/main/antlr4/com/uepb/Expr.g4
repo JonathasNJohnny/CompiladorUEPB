@@ -54,6 +54,9 @@ INT: [0-9]+;                       // Números inteiros
 // Identificadores
 ID: [a-zA-Z_][a-zA-Z0-9_]*;        // Identificadores (permitir letras minúsculas também)
 
+// Palavra-chave var
+VAR: 'var';                        // Palavra-chave var
+
 // Operadores Aritméticos
 OPSUM: '+';                        // Adição
 OPSUB: '-';                        // Subtração
@@ -76,7 +79,6 @@ IF: 'if';                          // Condicional if
 WHILE: 'while';                    // Loop while
 PRINT: 'print';                    // Saída print
 INPUT: 'input';                    // Entrada input
-VAR: 'var';                        // Palavra-chave var
 
 // Operadores relacionais e lógicos
 EQ: '==' ;                         // Igualdade
