@@ -41,7 +41,12 @@ expr: termo (op1 termo)*;   // Soma e subtração
 termo: fator (op2 fator)*;   // Multiplicação e divisão
 
 // Fatores podem ser potências ou outros valores
-fator: (op3 fator)? | LPAREN expr RPAREN | INT | FLOAT | ID;
+fator: LPAREN expr RPAREN
+     | INT
+     | FLOAT
+     | ID
+     | fator op3 fator  // Potência (fator ^ fator)
+     ;
 
 // Operadores relacionais e lógicos
 relop: EQ | NEQ | LT | LE | GT | GE;
@@ -73,7 +78,7 @@ OPSUM: '+';
 OPSUB: '-';
 OPMUL: '*';
 OPDIV: '/';
-OPEXP: '^';
+OPEXP: '^';  // Potência
 
 // Números
 FLOAT: [0-9]+ '.' [0-9]* | [0-9]* '.' [0-9]+;
