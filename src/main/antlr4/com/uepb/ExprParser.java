@@ -16,7 +16,7 @@ public class ExprParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		FLOAT=1, INT=2, ID=3, VAR=4, OPSUM=5, OPSUB=6, OPMUL=7, OPDIV=8, OPEXP=9, 
+		FLOAT=1, INT=2, VAR=3, ID=4, OPSUM=5, OPSUB=6, OPMUL=7, OPDIV=8, OPEXP=9, 
 		LPAREN=10, RPAREN=11, SEMICOLON=12, ASSIGN=13, LBRACE=14, RBRACE=15, IF=16, 
 		WHILE=17, PRINT=18, INPUT=19, EQ=20, NEQ=21, LT=22, LE=23, GT=24, GE=25, 
 		AND=26, OR=27, WS=28, LINE_COMMENT=29;
@@ -34,7 +34,7 @@ public class ExprParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, null, null, null, "'var'", "'+'", "'-'", "'*'", "'/'", "'^'", "'('", 
+			null, null, null, "'var'", null, "'+'", "'-'", "'*'", "'/'", "'^'", "'('", 
 			"')'", "';'", "'='", "'{'", "'}'", "'if'", "'while'", "'print'", "'input'", 
 			"'=='", "'!='", "'<'", "'<='", "'>'", "'>='", "'and'", "'or'"
 		};
@@ -42,7 +42,7 @@ public class ExprParser extends Parser {
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "FLOAT", "INT", "ID", "VAR", "OPSUM", "OPSUB", "OPMUL", "OPDIV", 
+			null, "FLOAT", "INT", "VAR", "ID", "OPSUM", "OPSUB", "OPMUL", "OPDIV", 
 			"OPEXP", "LPAREN", "RPAREN", "SEMICOLON", "ASSIGN", "LBRACE", "RBRACE", 
 			"IF", "WHILE", "PRINT", "INPUT", "EQ", "NEQ", "LT", "LE", "GT", "GE", 
 			"AND", "OR", "WS", "LINE_COMMENT"
@@ -1010,15 +1010,15 @@ public class ExprParser extends Parser {
 		"\f\u0000\u0000,.\u0001\u0000\u0000\u0000-$\u0001\u0000\u0000\u0000-%\u0001"+
 		"\u0000\u0000\u0000-&\u0001\u0000\u0000\u0000-\'\u0001\u0000\u0000\u0000"+
 		"-(\u0001\u0000\u0000\u0000-)\u0001\u0000\u0000\u0000-*\u0001\u0000\u0000"+
-		"\u0000.\u0003\u0001\u0000\u0000\u0000/0\u0005\u0004\u0000\u000003\u0005"+
-		"\u0003\u0000\u000012\u0005\r\u0000\u000024\u0003\u0010\b\u000031\u0001"+
+		"\u0000.\u0003\u0001\u0000\u0000\u0000/0\u0005\u0003\u0000\u000003\u0005"+
+		"\u0004\u0000\u000012\u0005\r\u0000\u000024\u0003\u0010\b\u000031\u0001"+
 		"\u0000\u0000\u000034\u0001\u0000\u0000\u000045\u0001\u0000\u0000\u0000"+
-		"56\u0005\f\u0000\u00006\u0005\u0001\u0000\u0000\u000078\u0005\u0003\u0000"+
+		"56\u0005\f\u0000\u00006\u0005\u0001\u0000\u0000\u000078\u0005\u0004\u0000"+
 		"\u000089\u0005\r\u0000\u00009:\u0003\u0010\b\u0000:;\u0005\f\u0000\u0000"+
 		";\u0007\u0001\u0000\u0000\u0000<=\u0005\u0012\u0000\u0000=>\u0005\n\u0000"+
 		"\u0000>?\u0003\u0010\b\u0000?@\u0005\u000b\u0000\u0000@A\u0005\f\u0000"+
 		"\u0000A\t\u0001\u0000\u0000\u0000BC\u0005\u0013\u0000\u0000CD\u0005\n"+
-		"\u0000\u0000DE\u0005\u0003\u0000\u0000EF\u0005\u000b\u0000\u0000FG\u0005"+
+		"\u0000\u0000DE\u0005\u0004\u0000\u0000EF\u0005\u000b\u0000\u0000FG\u0005"+
 		"\f\u0000\u0000G\u000b\u0001\u0000\u0000\u0000HI\u0005\u0010\u0000\u0000"+
 		"IJ\u0005\n\u0000\u0000JK\u0003\u0010\b\u0000KL\u0005\u000b\u0000\u0000"+
 		"LM\u0005\u000e\u0000\u0000MN\u0003\u0000\u0000\u0000NO\u0005\u000f\u0000"+
@@ -1036,7 +1036,7 @@ public class ExprParser extends Parser {
 		"\n\u0000ln\u0001\u0000\u0000\u0000mj\u0001\u0000\u0000\u0000mn\u0001\u0000"+
 		"\u0000\u0000nw\u0001\u0000\u0000\u0000op\u0005\n\u0000\u0000pq\u0003\u0010"+
 		"\b\u0000qr\u0005\u000b\u0000\u0000rw\u0001\u0000\u0000\u0000sw\u0005\u0002"+
-		"\u0000\u0000tw\u0005\u0001\u0000\u0000uw\u0005\u0003\u0000\u0000vm\u0001"+
+		"\u0000\u0000tw\u0005\u0001\u0000\u0000uw\u0005\u0004\u0000\u0000vm\u0001"+
 		"\u0000\u0000\u0000vo\u0001\u0000\u0000\u0000vs\u0001\u0000\u0000\u0000"+
 		"vt\u0001\u0000\u0000\u0000vu\u0001\u0000\u0000\u0000w\u0015\u0001\u0000"+
 		"\u0000\u0000xy\u0007\u0000\u0000\u0000y\u0017\u0001\u0000\u0000\u0000"+
