@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue", "this-escape"})
-public class Expr extends Parser {
+public class ExprParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.13.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -94,14 +94,14 @@ public class Expr extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public Expr(TokenStream input) {
+	public ExprParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ProgContext extends ParserRuleContext {
-		public TerminalNode EOF() { return getToken(Expr.EOF, 0); }
+		public TerminalNode EOF() { return getToken(ExprParser.EOF, 0); }
 		public List<StatContext> stat() {
 			return getRuleContexts(StatContext.class);
 		}
@@ -181,7 +181,7 @@ public class Expr extends Parser {
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
-		public TerminalNode SEMICOLON() { return getToken(Expr.SEMICOLON, 0); }
+		public TerminalNode SEMICOLON() { return getToken(ExprParser.SEMICOLON, 0); }
 		public StatContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -269,10 +269,10 @@ public class Expr extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class VarDeclContext extends ParserRuleContext {
-		public TerminalNode VAR() { return getToken(Expr.VAR, 0); }
-		public TerminalNode ID() { return getToken(Expr.ID, 0); }
-		public TerminalNode SEMICOLON() { return getToken(Expr.SEMICOLON, 0); }
-		public TerminalNode ASSIGN() { return getToken(Expr.ASSIGN, 0); }
+		public TerminalNode VAR() { return getToken(ExprParser.VAR, 0); }
+		public TerminalNode ID() { return getToken(ExprParser.ID, 0); }
+		public TerminalNode SEMICOLON() { return getToken(ExprParser.SEMICOLON, 0); }
+		public TerminalNode ASSIGN() { return getToken(ExprParser.ASSIGN, 0); }
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
@@ -330,12 +330,12 @@ public class Expr extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class VarAssignContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(Expr.ID, 0); }
-		public TerminalNode ASSIGN() { return getToken(Expr.ASSIGN, 0); }
+		public TerminalNode ID() { return getToken(ExprParser.ID, 0); }
+		public TerminalNode ASSIGN() { return getToken(ExprParser.ASSIGN, 0); }
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
-		public TerminalNode SEMICOLON() { return getToken(Expr.SEMICOLON, 0); }
+		public TerminalNode SEMICOLON() { return getToken(ExprParser.SEMICOLON, 0); }
 		public VarAssignContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -379,13 +379,13 @@ public class Expr extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class PrintStatContext extends ParserRuleContext {
-		public TerminalNode PRINT() { return getToken(Expr.PRINT, 0); }
-		public TerminalNode LPAREN() { return getToken(Expr.LPAREN, 0); }
+		public TerminalNode PRINT() { return getToken(ExprParser.PRINT, 0); }
+		public TerminalNode LPAREN() { return getToken(ExprParser.LPAREN, 0); }
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
-		public TerminalNode RPAREN() { return getToken(Expr.RPAREN, 0); }
-		public TerminalNode SEMICOLON() { return getToken(Expr.SEMICOLON, 0); }
+		public TerminalNode RPAREN() { return getToken(ExprParser.RPAREN, 0); }
+		public TerminalNode SEMICOLON() { return getToken(ExprParser.SEMICOLON, 0); }
 		public PrintStatContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -431,11 +431,11 @@ public class Expr extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class InputStatContext extends ParserRuleContext {
-		public TerminalNode INPUT() { return getToken(Expr.INPUT, 0); }
-		public TerminalNode LPAREN() { return getToken(Expr.LPAREN, 0); }
-		public TerminalNode ID() { return getToken(Expr.ID, 0); }
-		public TerminalNode RPAREN() { return getToken(Expr.RPAREN, 0); }
-		public TerminalNode SEMICOLON() { return getToken(Expr.SEMICOLON, 0); }
+		public TerminalNode INPUT() { return getToken(ExprParser.INPUT, 0); }
+		public TerminalNode LPAREN() { return getToken(ExprParser.LPAREN, 0); }
+		public TerminalNode ID() { return getToken(ExprParser.ID, 0); }
+		public TerminalNode RPAREN() { return getToken(ExprParser.RPAREN, 0); }
+		public TerminalNode SEMICOLON() { return getToken(ExprParser.SEMICOLON, 0); }
 		public InputStatContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -481,17 +481,17 @@ public class Expr extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class IfStatContext extends ParserRuleContext {
-		public TerminalNode IF() { return getToken(Expr.IF, 0); }
-		public TerminalNode LPAREN() { return getToken(Expr.LPAREN, 0); }
+		public TerminalNode IF() { return getToken(ExprParser.IF, 0); }
+		public TerminalNode LPAREN() { return getToken(ExprParser.LPAREN, 0); }
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
-		public TerminalNode RPAREN() { return getToken(Expr.RPAREN, 0); }
-		public TerminalNode LBRACE() { return getToken(Expr.LBRACE, 0); }
+		public TerminalNode RPAREN() { return getToken(ExprParser.RPAREN, 0); }
+		public TerminalNode LBRACE() { return getToken(ExprParser.LBRACE, 0); }
 		public ProgContext prog() {
 			return getRuleContext(ProgContext.class,0);
 		}
-		public TerminalNode RBRACE() { return getToken(Expr.RBRACE, 0); }
+		public TerminalNode RBRACE() { return getToken(ExprParser.RBRACE, 0); }
 		public IfStatContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -541,17 +541,17 @@ public class Expr extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class WhileStatContext extends ParserRuleContext {
-		public TerminalNode WHILE() { return getToken(Expr.WHILE, 0); }
-		public TerminalNode LPAREN() { return getToken(Expr.LPAREN, 0); }
+		public TerminalNode WHILE() { return getToken(ExprParser.WHILE, 0); }
+		public TerminalNode LPAREN() { return getToken(ExprParser.LPAREN, 0); }
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
-		public TerminalNode RPAREN() { return getToken(Expr.RPAREN, 0); }
-		public TerminalNode LBRACE() { return getToken(Expr.LBRACE, 0); }
+		public TerminalNode RPAREN() { return getToken(ExprParser.RPAREN, 0); }
+		public TerminalNode LBRACE() { return getToken(ExprParser.LBRACE, 0); }
 		public ProgContext prog() {
 			return getRuleContext(ProgContext.class,0);
 		}
-		public TerminalNode RBRACE() { return getToken(Expr.RBRACE, 0); }
+		public TerminalNode RBRACE() { return getToken(ExprParser.RBRACE, 0); }
 		public WhileStatContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -739,14 +739,14 @@ public class Expr extends Parser {
 		public FatorContext fator() {
 			return getRuleContext(FatorContext.class,0);
 		}
-		public TerminalNode LPAREN() { return getToken(Expr.LPAREN, 0); }
+		public TerminalNode LPAREN() { return getToken(ExprParser.LPAREN, 0); }
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
-		public TerminalNode RPAREN() { return getToken(Expr.RPAREN, 0); }
-		public TerminalNode INT() { return getToken(Expr.INT, 0); }
-		public TerminalNode FLOAT() { return getToken(Expr.FLOAT, 0); }
-		public TerminalNode ID() { return getToken(Expr.ID, 0); }
+		public TerminalNode RPAREN() { return getToken(ExprParser.RPAREN, 0); }
+		public TerminalNode INT() { return getToken(ExprParser.INT, 0); }
+		public TerminalNode FLOAT() { return getToken(ExprParser.FLOAT, 0); }
+		public TerminalNode ID() { return getToken(ExprParser.ID, 0); }
 		public FatorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -841,8 +841,8 @@ public class Expr extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Op1Context extends ParserRuleContext {
-		public TerminalNode OPSUM() { return getToken(Expr.OPSUM, 0); }
-		public TerminalNode OPSUB() { return getToken(Expr.OPSUB, 0); }
+		public TerminalNode OPSUM() { return getToken(ExprParser.OPSUM, 0); }
+		public TerminalNode OPSUB() { return getToken(ExprParser.OPSUB, 0); }
 		public Op1Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -889,8 +889,8 @@ public class Expr extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Op2Context extends ParserRuleContext {
-		public TerminalNode OPMUL() { return getToken(Expr.OPMUL, 0); }
-		public TerminalNode OPDIV() { return getToken(Expr.OPDIV, 0); }
+		public TerminalNode OPMUL() { return getToken(ExprParser.OPMUL, 0); }
+		public TerminalNode OPDIV() { return getToken(ExprParser.OPDIV, 0); }
 		public Op2Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -937,7 +937,7 @@ public class Expr extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Op3Context extends ParserRuleContext {
-		public TerminalNode OPEXP() { return getToken(Expr.OPEXP, 0); }
+		public TerminalNode OPEXP() { return getToken(ExprParser.OPEXP, 0); }
 		public Op3Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}

@@ -16,169 +16,169 @@ public class ExprBaseListener implements ExprListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProg(Expr.ProgContext ctx) { }
+	@Override public void enterProg(ExprParser.ProgContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitProg(Expr.ProgContext ctx) { }
+	@Override public void exitProg(ExprParser.ProgContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStat(Expr.StatContext ctx) { }
+	@Override public void enterStat(ExprParser.StatContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStat(Expr.StatContext ctx) { }
+	@Override public void exitStat(ExprParser.StatContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVarDecl(Expr.VarDeclContext ctx) { }
+	@Override public void enterVarDecl(ExprParser.VarDeclContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVarDecl(Expr.VarDeclContext ctx) { }
+	@Override public void exitVarDecl(ExprParser.VarDeclContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVarAssign(Expr.VarAssignContext ctx) { }
+	@Override public void enterVarAssign(ExprParser.VarAssignContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVarAssign(Expr.VarAssignContext ctx) { }
+	@Override public void exitVarAssign(ExprParser.VarAssignContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrintStat(Expr.PrintStatContext ctx) { }
+	@Override public void enterPrintStat(ExprParser.PrintStatContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrintStat(Expr.PrintStatContext ctx) { }
+	@Override public void exitPrintStat(ExprParser.PrintStatContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterInputStat(Expr.InputStatContext ctx) { }
+	@Override public void enterInputStat(ExprParser.InputStatContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitInputStat(Expr.InputStatContext ctx) { }
+	@Override public void exitInputStat(ExprParser.InputStatContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIfStat(Expr.IfStatContext ctx) { }
+	@Override public void enterIfStat(ExprParser.IfStatContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIfStat(Expr.IfStatContext ctx) { }
+	@Override public void exitIfStat(ExprParser.IfStatContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWhileStat(Expr.WhileStatContext ctx) { }
+	@Override public void enterWhileStat(ExprParser.WhileStatContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitWhileStat(Expr.WhileStatContext ctx) { }
+	@Override public void exitWhileStat(ExprParser.WhileStatContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpr(Expr.ExprContext ctx) { }
+	@Override public void enterExpr(ExprParser.ExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpr(Expr.ExprContext ctx) { }
+	@Override public void exitExpr(ExprParser.ExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTermo(Expr.TermoContext ctx) { }
+	@Override public void enterTermo(ExprParser.TermoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTermo(Expr.TermoContext ctx) { }
+	@Override public void exitTermo(ExprParser.TermoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFator(Expr.FatorContext ctx) { }
+	@Override public void enterFator(ExprParser.FatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFator(Expr.FatorContext ctx) { }
+	@Override public void exitFator(ExprParser.FatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOp1(Expr.Op1Context ctx) { }
+	@Override public void enterOp1(ExprParser.Op1Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOp1(Expr.Op1Context ctx) { }
+	@Override public void exitOp1(ExprParser.Op1Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOp2(Expr.Op2Context ctx) { }
+	@Override public void enterOp2(ExprParser.Op2Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOp2(Expr.Op2Context ctx) { }
+	@Override public void exitOp2(ExprParser.Op2Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOp3(Expr.Op3Context ctx) { }
+	@Override public void enterOp3(ExprParser.Op3Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOp3(Expr.Op3Context ctx) { }
+	@Override public void exitOp3(ExprParser.Op3Context ctx) { }
 
 	/**
 	 * {@inheritDoc}

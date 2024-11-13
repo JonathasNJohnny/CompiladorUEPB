@@ -1,43 +1,32 @@
-// Testando a declaração de variáveis
-x;                  // Declaração sem atribuição
-y = 10;             // Declaração com atribuição
+var x;              
+x = 20;               
+y = 10;                
+y = x + 5;            
 
-// Testando atribuições
-x = 20;                 // Atribuição de valor à variável x
-y = x + 5;              // Atribuição com expressão
+print(x);               
+print(10 + 5);         
 
-// Testando instrução de print
-print(x);               // Impressão de variável
-print(10 + 5);          // Impressão de expressão
+input(x);             
 
-// Testando instrução de input
-input(x);               // Entrada de dados para variável x
-
-// Testando estrutura condicional (if)
-if (x > 5) {            // Estrutura if com expressão
+if (x > 5) {       
     print(x);
 } else {
     print(0);
 }
 
-// Testando estrutura de repetição (while)
 while (x < 10) {
     x = x + 1;
     print(x);
 }
 
-// Testando expressões com operadores aritméticos
-10 + 5;                 // Expressão com adição
-10 - 5;                 // Expressão com subtração
-5 * 3;                  // Expressão com multiplicação
-10 / 2;                 // Expressão com divisão
+(10 + 5);                 
+(10 - 5);                 
+(5 * 3);                 
+(10 / 2);                
 
-// Testando expressões com operadores de potência
-2 ^ 3;                  // Potência
-(2 + 3) ^ 2;            // Potência com expressão dentro dos parênteses
+(2 ^ 3);                  
+(2 + 3) ^ 2;           
 
-// Testando expressões compostas
-(10 + 5) * (x - 1);     // Expressão composta com parênteses
+(10 + 5) * (x - 1);     
 
-// Testando a combinação de operadores
-x = (10 + 5) * 2 - (3 ^ 2);  // Combinação de soma, multiplicação e potência
+x = (10 + 5) * 2 - (3 ^ 2);  
