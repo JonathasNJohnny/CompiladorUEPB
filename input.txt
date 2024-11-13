@@ -1,37 +1,43 @@
+// Testando a declaração de variáveis
+x;                  // Declaração sem atribuição
+y = 10;             // Declaração com atribuição
 
-// Exemplo de números inteiros
-123
-4567
-// Exemplo de números de ponto flutuante
-3.14
-0.5
-.75
-// Exemplo de identificadores
-x
-variable_name
-// Operadores aritméticos
-1 + 2
-3 - 4
-5 * 6
-7 / 8
-2 ^ 3
-// Parênteses
-(1 + 2) * 3
-// Palavras-chave
-if x == 10
-while x < 5
-print "Hello, World!"
-input "Enter a number"
-// Operadores relacionais
-x == 10
-y != 5
-a < b
-x <= y
-x > y
-y >= x
-// Operadores lógicos
-x and y
-a or b
-// Ponto e vírgula
-a + b;
-c * d;
+// Testando atribuições
+x = 20;                 // Atribuição de valor à variável x
+y = x + 5;              // Atribuição com expressão
+
+// Testando instrução de print
+print(x);               // Impressão de variável
+print(10 + 5);          // Impressão de expressão
+
+// Testando instrução de input
+input(x);               // Entrada de dados para variável x
+
+// Testando estrutura condicional (if)
+if (x > 5) {            // Estrutura if com expressão
+    print(x);
+} else {
+    print(0);
+}
+
+// Testando estrutura de repetição (while)
+while (x < 10) {
+    x = x + 1;
+    print(x);
+}
+
+// Testando expressões com operadores aritméticos
+10 + 5;                 // Expressão com adição
+10 - 5;                 // Expressão com subtração
+5 * 3;                  // Expressão com multiplicação
+10 / 2;                 // Expressão com divisão
+
+// Testando expressões com operadores de potência
+2 ^ 3;                  // Potência
+(2 + 3) ^ 2;            // Potência com expressão dentro dos parênteses
+
+// Testando expressões compostas
+(10 + 5) * (x - 1);     // Expressão composta com parênteses
+
+// Testando a combinação de operadores
+x = (10 + 5) * 2 - (3 ^ 2);  // Combinação de soma, multiplicação e potência

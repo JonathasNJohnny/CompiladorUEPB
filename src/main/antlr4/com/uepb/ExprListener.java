@@ -3,107 +3,147 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
  * This interface defines a complete listener for a parse tree produced by
- * {@link ExprParser}.
+ * {@link Expr}.
  */
 public interface ExprListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#prog}.
+	 * Enter a parse tree produced by {@link Expr#prog}.
 	 * @param ctx the parse tree
 	 */
-	void enterProg(ExprParser.ProgContext ctx);
+	void enterProg(Expr.ProgContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#prog}.
+	 * Exit a parse tree produced by {@link Expr#prog}.
 	 * @param ctx the parse tree
 	 */
-	void exitProg(ExprParser.ProgContext ctx);
+	void exitProg(Expr.ProgContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#expr}.
+	 * Enter a parse tree produced by {@link Expr#stat}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpr(ExprParser.ExprContext ctx);
+	void enterStat(Expr.StatContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#expr}.
+	 * Exit a parse tree produced by {@link Expr#stat}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpr(ExprParser.ExprContext ctx);
+	void exitStat(Expr.StatContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#restExpr}.
+	 * Enter a parse tree produced by {@link Expr#varDecl}.
 	 * @param ctx the parse tree
 	 */
-	void enterRestExpr(ExprParser.RestExprContext ctx);
+	void enterVarDecl(Expr.VarDeclContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#restExpr}.
+	 * Exit a parse tree produced by {@link Expr#varDecl}.
 	 * @param ctx the parse tree
 	 */
-	void exitRestExpr(ExprParser.RestExprContext ctx);
+	void exitVarDecl(Expr.VarDeclContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#termo}.
+	 * Enter a parse tree produced by {@link Expr#varAssign}.
 	 * @param ctx the parse tree
 	 */
-	void enterTermo(ExprParser.TermoContext ctx);
+	void enterVarAssign(Expr.VarAssignContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#termo}.
+	 * Exit a parse tree produced by {@link Expr#varAssign}.
 	 * @param ctx the parse tree
 	 */
-	void exitTermo(ExprParser.TermoContext ctx);
+	void exitVarAssign(Expr.VarAssignContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#restTermo}.
+	 * Enter a parse tree produced by {@link Expr#printStat}.
 	 * @param ctx the parse tree
 	 */
-	void enterRestTermo(ExprParser.RestTermoContext ctx);
+	void enterPrintStat(Expr.PrintStatContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#restTermo}.
+	 * Exit a parse tree produced by {@link Expr#printStat}.
 	 * @param ctx the parse tree
 	 */
-	void exitRestTermo(ExprParser.RestTermoContext ctx);
+	void exitPrintStat(Expr.PrintStatContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#potencia}.
+	 * Enter a parse tree produced by {@link Expr#inputStat}.
 	 * @param ctx the parse tree
 	 */
-	void enterPotencia(ExprParser.PotenciaContext ctx);
+	void enterInputStat(Expr.InputStatContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#potencia}.
+	 * Exit a parse tree produced by {@link Expr#inputStat}.
 	 * @param ctx the parse tree
 	 */
-	void exitPotencia(ExprParser.PotenciaContext ctx);
+	void exitInputStat(Expr.InputStatContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#fator}.
+	 * Enter a parse tree produced by {@link Expr#ifStat}.
 	 * @param ctx the parse tree
 	 */
-	void enterFator(ExprParser.FatorContext ctx);
+	void enterIfStat(Expr.IfStatContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#fator}.
+	 * Exit a parse tree produced by {@link Expr#ifStat}.
 	 * @param ctx the parse tree
 	 */
-	void exitFator(ExprParser.FatorContext ctx);
+	void exitIfStat(Expr.IfStatContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#op1}.
+	 * Enter a parse tree produced by {@link Expr#whileStat}.
 	 * @param ctx the parse tree
 	 */
-	void enterOp1(ExprParser.Op1Context ctx);
+	void enterWhileStat(Expr.WhileStatContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#op1}.
+	 * Exit a parse tree produced by {@link Expr#whileStat}.
 	 * @param ctx the parse tree
 	 */
-	void exitOp1(ExprParser.Op1Context ctx);
+	void exitWhileStat(Expr.WhileStatContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#op2}.
+	 * Enter a parse tree produced by {@link Expr#expr}.
 	 * @param ctx the parse tree
 	 */
-	void enterOp2(ExprParser.Op2Context ctx);
+	void enterExpr(Expr.ExprContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#op2}.
+	 * Exit a parse tree produced by {@link Expr#expr}.
 	 * @param ctx the parse tree
 	 */
-	void exitOp2(ExprParser.Op2Context ctx);
+	void exitExpr(Expr.ExprContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ExprParser#op3}.
+	 * Enter a parse tree produced by {@link Expr#termo}.
 	 * @param ctx the parse tree
 	 */
-	void enterOp3(ExprParser.Op3Context ctx);
+	void enterTermo(Expr.TermoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ExprParser#op3}.
+	 * Exit a parse tree produced by {@link Expr#termo}.
 	 * @param ctx the parse tree
 	 */
-	void exitOp3(ExprParser.Op3Context ctx);
+	void exitTermo(Expr.TermoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Expr#fator}.
+	 * @param ctx the parse tree
+	 */
+	void enterFator(Expr.FatorContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Expr#fator}.
+	 * @param ctx the parse tree
+	 */
+	void exitFator(Expr.FatorContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Expr#op1}.
+	 * @param ctx the parse tree
+	 */
+	void enterOp1(Expr.Op1Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link Expr#op1}.
+	 * @param ctx the parse tree
+	 */
+	void exitOp1(Expr.Op1Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link Expr#op2}.
+	 * @param ctx the parse tree
+	 */
+	void enterOp2(Expr.Op2Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link Expr#op2}.
+	 * @param ctx the parse tree
+	 */
+	void exitOp2(Expr.Op2Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link Expr#op3}.
+	 * @param ctx the parse tree
+	 */
+	void enterOp3(Expr.Op3Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link Expr#op3}.
+	 * @param ctx the parse tree
+	 */
+	void exitOp3(Expr.Op3Context ctx);
 }
