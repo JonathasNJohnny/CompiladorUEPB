@@ -1,97 +1,99 @@
-    grammar Expr;
+grammar Expr;
 
-    // A regra inicial que pode conter qualquer conjunto de instruções
-    prog: (stat)* EOF;
+// A regra inicial que pode conter qualquer conjunto de instruções
+prog: (stat)* EOF;
 
-    // Regras para declarações e instruções
-    stat: varDecl
-        | varAssign
-        | printStat
-        | inputStat
-        | ifStat
-        | whileStat
-        | expr SEMICOLON
-        ;
+// Regras para declarações e instruções
+stat: varDecl
+    | varAssign
+    | printStat
+    | inputStat
+    | ifStat
+    | whileStat
+    | expr SEMICOLON
+    ;
 
-    // Declaração de variáveis (com ou sem atribuição)
-    varDecl: VAR ID (ASSIGN expr)? SEMICOLON;  // Corrigido para garantir a palavra-chave 'var' e o ponto e vírgula
+// Declaração de variáveis (com ou sem atribuição)
+varDecl: VAR ID (ASSIGN expr)? SEMICOLON;
 
-    // Atribuição de valor para variáveis
-    varAssign: ID ASSIGN expr SEMICOLON;
+// Atribuição de valor para variáveis
+varAssign: ID ASSIGN expr SEMICOLON;
 
-    // Instrução de print (impressão na tela)
-    printStat: PRINT LPAREN expr RPAREN SEMICOLON;
+// Instrução de print (impressão na tela)
+printStat: PRINT LPAREN expr RPAREN SEMICOLON;
 
-    // Instrução de input (entrada de dados)
-    inputStat: INPUT LPAREN ID RPAREN SEMICOLON;
+// Instrução de input (entrada de dados)
+inputStat: INPUT LPAREN ID RPAREN SEMICOLON;
 
-    // Estrutura condicional (if)
-    ifStat: IF LPAREN expr RPAREN LBRACE prog RBRACE;
+// Estrutura condicional (if)
+ifStat: IF LPAREN boolExpr RPAREN LBRACE (stat)* RBRACE;
 
-    // Estrutura de repetição (while)
-    whileStat: WHILE LPAREN expr RPAREN LBRACE prog RBRACE;
+// Estrutura de repetição (while)
+whileStat: WHILE LPAREN boolExpr RPAREN LBRACE (stat)* RBRACE;
 
-    // Expressão principal
-    expr: termo (op1 termo)*;   // Soma e subtração
+// Expressão booleana que inclui comparações
+boolExpr: expr (relop expr)?;
 
-    // Termo que pode ter multiplicação e divisão
-    termo: fator (op2 fator)*;   // Multiplicação e divisão
+// Expressão principal
+expr: termo (op1 termo)*;   // Soma e subtração
 
-    // Fatores podem ser potências ou outros valores
-    fator: (op3 fator)? | LPAREN expr RPAREN | INT | FLOAT | ID;  // Potência ou valores literais
+// Termo que pode ter multiplicação e divisão
+termo: fator (op2 fator)*;   // Multiplicação e divisão
 
-    // Operadores
-    op1: OPSUM | OPSUB;   // Adição e subtração
-    op2: OPMUL | OPDIV;   // Multiplicação e divisão
-    op3: OPEXP;          // Potência
+// Fatores podem ser potências ou outros valores
+fator: (op3 fator)? | LPAREN expr RPAREN | INT | FLOAT | ID;
 
-    // Tokens
+// Operadores relacionais e lógicos
+relop: EQ | NEQ | LT | LE | GT | GE;
 
-    // Números
-    FLOAT: [0-9]+ '.' [0-9]* | [0-9]* '.' [0-9]+;  // Números de ponto flutuante
-    INT: [0-9]+;                       // Números inteiros
+// Operadores
+op1: OPSUM | OPSUB;   // Adição e subtração
+op2: OPMUL | OPDIV;   // Multiplicação e divisão
+op3: OPEXP;           // Potência
 
-    // Palavra-chave var
-    VAR: 'var';                        // Palavra-chave var
+// Tokens
 
-    // Identificadores
-    ID: [a-zA-Z_][a-zA-Z0-9_]*;        // Identificadores (permitir letras minúsculas também)
+// Palavras-chave (controle de fluxo e I/O)
+VAR: 'var';
+PRINT: 'print';
+INPUT: 'input';
+IF: 'if';
+WHILE: 'while';
 
-    // Operadores Aritméticos
-    OPSUM: '+';                        // Adição
-    OPSUB: '-';                        // Subtração
-    OPMUL: '*';                        // Multiplicação
-    OPDIV: '/';                        // Divisão
-    OPEXP: '^';                        // Exponenciação
+// Operadores relacionais e lógicos
+EQ: '==';
+NEQ: '!=';
+LT: '<';
+LE: '<=';
+GT: '>';
+GE: '>=';
 
-    // Parênteses e ponto e vírgula
-    LPAREN: '(';                       // Parêntese esquerdo
-    RPAREN: ')';                       // Parêntese direito
-    SEMICOLON: ';';                    // Ponto e vírgula
+// Operadores aritméticos
+OPSUM: '+';
+OPSUB: '-';
+OPMUL: '*';
+OPDIV: '/';
+OPEXP: '^';
 
-    // Delimitadores
-    ASSIGN: '=';                       // Atribuição
-    LBRACE: '{';                       // Chave esquerda
-    RBRACE: '}';                       // Chave direita
+// Números
+FLOAT: [0-9]+ '.' [0-9]* | [0-9]* '.' [0-9]+;
+INT: [0-9]+;
 
-    // Palavras-chave (controle de fluxo e I/O)
-    IF: 'if';                          // Condicional if
-    WHILE: 'while';                    // Loop while
-    PRINT: 'print';                    // Saída print
-    INPUT: 'input';                    // Entrada input
+// Identificadores
+ID: [a-zA-Z_][a-zA-Z0-9_]*;
 
-    // Operadores relacionais e lógicos
-    EQ: '==' ;                         // Igualdade
-    NEQ: '!=';                         // Diferença
-    LT: '<';                           // Menor que
-    LE: '<=';                          // Menor ou igual
-    GT: '>';                           // Maior que
-    GE: '>=';                          // Maior ou igual
-    AND: 'and';                        // Operador lógico AND
-    OR: 'or';                          // Operador lógico OR
+// Parênteses e ponto e vírgula
+LPAREN: '(';
+RPAREN: ')';
+SEMICOLON: ';';
 
-    // Ignorar espaços em branco
-    WS: [ \t\n\r]+ -> skip;            // Ignora espaços em branco
+// Delimitadores
+ASSIGN: '=';
+LBRACE: '{';
+RBRACE: '}';
 
-    // Comentários de linha
-    LINE_COMMENT: '//' ~[\n\r]* -> skip;  // Comentários de linha
+// Ignorar espaços em branco
+WS: [ \t\n\r]+ -> skip;
+
+// Comentários de linha
+LINE_COMMENT: '//' ~[\n\r]* -> skip;
