@@ -1,0 +1,37 @@
+
+// Exemplo de números inteiros
+123
+4567
+// Exemplo de números de ponto flutuante
+3.14
+0.5
+.75
+// Exemplo de identificadores
+x
+variable_name
+// Operadores aritméticos
+1 + 2
+3 - 4
+5 * 6
+7 / 8
+2 ^ 3
+// Parênteses
+(1 + 2) * 3
+// Palavras-chave
+if x == 10
+while x < 5
+print "Hello, World!"
+input "Enter a number"
+// Operadores relacionais
+x == 10
+y != 5
+a < b
+x <= y
+x > y
+y >= x
+// Operadores lógicos
+x and y
+a or b
+// Ponto e vírgula
+a + b;
+c * d;
