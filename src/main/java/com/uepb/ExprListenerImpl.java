@@ -108,11 +108,24 @@ public class ExprListenerImpl extends ExprBaseListener {
     }
     
     private int evaluateFator(ExprParser.FatorContext ctx) {
+        if (ctx.LPAREN() != null && ctx.RPAREN() != null) {
+            // Se o fator é uma expressão entre parênteses, chama evaluateExpr para processá-la
+            return evaluateExpr(ctx.expr());
+        } else if (ctx.fator().size() == 2 && ctx.op3() != null) {
+            // Se o fator contém uma operação de potência (fator ^ fator)
+            int base = evaluateFator(ctx.fator(0));
+            int exponent = evaluateFator(ctx.fator(1));
+            return (int) Math.pow(base, exponent);  // Calcula a potência
+        }
+    
+        // Caso seja uma variável ou um número
         String text = ctx.getText();
         if (symbolTable.containsVar(text)) {
             return symbolTable.getVar(text); // Retorna o valor da variável
         }
-        return Integer.parseInt(text); // Caso contrário, trata como número literal
+        
+        // Tenta converter para um número
+        return Integer.parseInt(text); // Trata como número literal
     }
     
 
