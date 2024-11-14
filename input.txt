@@ -20,7 +20,7 @@ if (x > 5) {
 // Laço de repetição WHILE com incremento
 while (x < 10) {
     x = x + 1;
-    print(x);        // Imprime x até que seja menor que 10
+    print(x);        // Imprime x enquanto for menor que 10
 }
 
 // Reset de valor e novo laço com condição aninhada

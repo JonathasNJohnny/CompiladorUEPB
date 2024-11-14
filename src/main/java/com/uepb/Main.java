@@ -24,7 +24,7 @@ public class Main {
             // Cria o parser a partir dos tokens
             ExprParser parser = new ExprParser(tokens);
 
-            // Chama o método 'prog' (ou o nome correto conforme sua gramática)
+            // Chama o método 'prog'
             ParseTree tree = parser.prog();  // ou parser.prog()
 
             // Exibe a árvore gerada
