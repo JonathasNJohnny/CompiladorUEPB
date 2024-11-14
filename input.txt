@@ -1,5 +1,6 @@
 // Declaração de variáveis
 var x;
+var x;
 x = 20;              // Atribuição de valor a x
 var y;
 y = 10;              // Atribuição de valor a y

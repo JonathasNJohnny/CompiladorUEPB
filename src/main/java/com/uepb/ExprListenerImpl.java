@@ -13,6 +13,13 @@ public class ExprListenerImpl extends ExprBaseListener {
     @Override
     public void enterVarDecl(ExprParser.VarDeclContext ctx) {
         String varName = ctx.ID().getText();
+
+        // Verifica se a variável já foi declarada no escopo atual
+        if (symbolTable.containsVar(varName)) {
+            System.out.println("Erro: A variável " + varName + " já foi declarada.");
+            return; // Impede a criação da variável novamente
+        }
+
         if (ctx.expr() != null) {
             // Se tiver atribuição, avalia a expressão
             int value = evaluateExpr(ctx.expr());
