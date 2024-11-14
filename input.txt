@@ -1,30 +1,50 @@
-var x;              
-x = 20;               
-y = 10;                
-y = x + 5;            
+// Declaração de variáveis
+var x;
+x = 20;              // Atribuição de valor a x
+var y;
+y = 10;              // Atribuição de valor a y
+y = x + 5;           // Atribuição com expressão aritmética
 
-print(x);               
-print(10 + 5);         
+// Impressão de variáveis e valores constantes
+print(x);            // Deve imprimir 20
+print(10 + 5);       // Deve imprimir 15
 
-input(x);             
+// Entrada de valor
+input(x);            // Recebe um novo valor para x via entrada do usuário
 
-if (x > 5) {       
-    print(x);
+// Estrutura condicional IF
+if (x > 5) {
+    print(x);        // Imprime x se for maior que 5
 }
+
+// Laço de repetição WHILE com incremento
+while (x < 10) {
+    x = x + 1;
+    print(x);        // Imprime x até que seja menor que 10
+}
+
+// Reset de valor e novo laço com condição aninhada
+x = 0;
 
 while (x < 10) {
     x = x + 1;
-    print(x);
+    if (x > 5) {
+        print(x);    // Imprime x apenas se for maior que 5
+    }
 }
 
-(10 + 5);                 
-(10 - 5);                 
-(5 * 3);                 
-(10 / 2);                
+// Avaliação de expressões aritméticas
+(10 + 5);            // Soma simples
+(10 - 5);            // Subtração
+(5 * 3);             // Multiplicação
+(10 / 2);            // Divisão
 
-(2 ^ 3);                  
-(2 + 3) ^ 2;           
+// Exponenciação e expressões complexas
+(2 ^ 3);             // Exponenciação simples
+(2 + 3) ^ 2;         // Exponenciação de uma soma
 
-(10 + 5) * (x - 1);     
+// Expressão com parênteses e variáveis
+(10 + 5) * (x - 1);  // Avalia a expressão com o valor atual de x
 
-x = x + y * 12 ^ 3 ^ 4;
+// Expressão complexa com múltiplos operadores
+x = x + y * 12 ^ 3 ^ 4;  // Avaliação complexa de múltiplas operações

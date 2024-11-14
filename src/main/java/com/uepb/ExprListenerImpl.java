@@ -42,10 +42,21 @@ public class ExprListenerImpl extends ExprBaseListener {
     @Override
     public void enterInputStat(ExprParser.InputStatContext ctx) {
         String varName = ctx.ID().getText();
-        // Simula a entrada de dados
-        System.out.println("P-Code: INPUT " + varName);
-        symbolTable.addVar(varName, 0); // Atribuir valor fictício, a entrada real é simulada
+        System.out.print("Digite o valor para " + varName + ": ");
+        
+        try {
+            // Usa o Scanner para capturar a entrada do usuário
+            java.util.Scanner scanner = new java.util.Scanner(System.in);
+            int value = scanner.nextInt();  // Lê um valor inteiro
+            
+            symbolTable.addVar(varName, value); // Atribui o valor digitado à variável
+            System.out.println("P-Code: INPUT " + varName);
+            System.out.println("P-Code: ASSIGN " + value + " TO " + varName);
+        } catch (Exception e) {
+            System.out.println("Erro na entrada de dados: " + e.getMessage());
+        }
     }
+
 
     @Override
     public void enterIfStat(ExprParser.IfStatContext ctx) {
